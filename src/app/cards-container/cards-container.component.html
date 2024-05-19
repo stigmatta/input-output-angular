@@ -1,0 +1,20 @@
+<div class="center-container">
+    <button class="discount" (click)="applyDiscount()">Хочу скидку</button>
+</div>
+
+
+<div class="products">
+    <div *ngFor="let product of products" class="product">
+      <app-card-block
+        [product]="product"
+        (showDetails)="showDetails($event)">
+      </app-card-block>
+    </div>
+  </div>
+  
+  <div class="product-details" *ngIf="selectedProduct">
+    <h2>{{ selectedProduct.name }}</h2>
+    <p>Price: {{ selectedProduct.price }}</p>
+    <p>{{ selectedProduct.description }}</p>
+  </div>
+  
